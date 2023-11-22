@@ -1,13 +1,16 @@
+// principal.component.ts
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Datos } from '../datos';
 
 @Component({
   selector: 'app-principal',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './principal.component.html',
-  styleUrl: './principal.component.css'
+  styleUrls: ['./principal.component.css'],
 })
 export class PrincipalComponent {
+  datos: Datos[] = [];
 
+  recibirDatos(datos: Datos): void {
+    this.datos.push(datos);
+  }
 }
