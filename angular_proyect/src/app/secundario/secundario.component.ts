@@ -11,10 +11,10 @@ export class SecundarioComponent {
   @Output() enviarDatos = new EventEmitter<Datos>();
 
   datos: Datos = {
-    nombre: 'EjemploNombre',
-    apellido: 'EjemploApellido',
-    edad: 25,
-    telefono: '123-456-7890',
+    nombre: 'Juan Camilo',
+    apellido: 'Pedraza',
+    edad: 19,
+    telefono: '3044163214',
   };
 
   enviarDatosAlPrincipal(): void {

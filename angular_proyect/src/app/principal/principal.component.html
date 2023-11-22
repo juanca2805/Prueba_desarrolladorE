@@ -1,1 +1,11 @@
-<p>principal works!</p>
+
+<h2>Componente Principal</h2>
+
+<ul>
+  <li *ngFor="let dato of datos">
+    <strong>Nombre:</strong> {{ dato.nombre }}, <strong>Apellido:</strong> {{ dato.apellido }},
+    <strong>Edad:</strong> {{ dato.edad }}, <strong>Teléfono:</strong> {{ dato.telefono }}
+  </li>
+</ul>
+
+<app-secundario (enviarDatos)="recibirDatos($event)"></app-secundario>
