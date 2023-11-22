@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "PRUEBA_ANGULAR": {
+    "angular_proyect": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/prueba-angular",
+            "outputPath": "dist/angular_proyect",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -57,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "PRUEBA_ANGULAR:build:production"
+              "buildTarget": "angular_proyect:build:production"
             },
             "development": {
-              "buildTarget": "PRUEBA_ANGULAR:build:development"
+              "buildTarget": "angular_proyect:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +68,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "PRUEBA_ANGULAR:build"
+            "buildTarget": "angular_proyect:build"
           }
         },
         "test": {

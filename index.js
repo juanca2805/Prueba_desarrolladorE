@@ -19,7 +19,7 @@ const schema = buildSchema(`
   type Character {
     id: Int
     firstName: String
-    lastName: String
+    lastName: String 
     fullName: String
     title: String
     family: String
