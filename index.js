@@ -47,7 +47,7 @@ const root = {
         fullName: characterData.fullName,
         title: characterData.title,
         family: characterData.family,
-        image: characterData.image,
+       
       
       };
     } catch (error) {
@@ -71,6 +71,8 @@ app.get('/', (req, res) => {
 });
 
 // Iniciar el servidor
-app.listen(PORT, () => {
-  console.log(`Servidor escuchando en el puerto ${PORT}`);
-});
+const server = app.listen(PORT, () => {
+    const host = server.address().address;
+    const port = server.address().port;
+    console.log(`Servidor escuchando en http://:${port}`);
+  });

@@ -1,0 +1,12 @@
+query {
+  getCharacter(id:1) {
+    id
+    firstName
+    lastName
+    fullName
+    title
+    family
+  
+    
+  }
+}
