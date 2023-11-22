@@ -1,7 +1,6 @@
 // index.js
 const express = require('express');
-const { graphqlHTTP } = require('express-graphql');
-const { buildSchema } = require('graphql');
+const axios = require('axios');
 
 const app = express();
 const PORT = 3000;
@@ -12,22 +11,20 @@ app.use((req, res, next) => {
   next();
 });
 
-// Ruta de ejemplo con GraphQL
-const schema = buildSchema(`
-  type Query {
-    message: String
+// Ruta para consumir la API "An API of Ice And Fire" y mostrar datos de un personaje
+app.get('/got-character', async (req, res) => {
+  try {
+    // Hacer una solicitud a la API para obtener información sobre Tyrion Lannister
+    const response = await axios.get('https://anapioficeandfire.com/api/characters/2');
+
+    // Mostrar los datos en la respuesta
+    res.json(response.data);
+  } catch (error) {
+    // Manejar errores
+    console.error('Error al hacer la solicitud a la API:', error.message);
+    res.status(500).json({ error: 'Error al obtener datos de la API' });
   }
-`);
-
-const root = {
-  message: () => '¡Hola, mundo desde GraphQL!',
-};
-
-app.use('/graphql', graphqlHTTP({
-  schema: schema,
-  rootValue: root,
-  graphiql: true, // Habilita la interfaz de GraphiQL para probar consultas
-}));
+});
 
 // Ruta de ejemplo
 app.get('/', (req, res) => {
