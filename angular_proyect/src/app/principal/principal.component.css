@@ -1,11 +1,17 @@
-/* principal.component.css */
+
 h2 {
     color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   li {
@@ -13,6 +19,7 @@ h2 {
     margin-bottom: 8px;
     padding: 10px;
     border-radius: 4px;
+  
   }
   
   strong {
